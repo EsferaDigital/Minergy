@@ -276,65 +276,152 @@ img{
   background: transparent;
 }
 
+/* Main */
+.Main{
+  min-height: 80vh;
+  /* background-color: #e6e6e6; */
+  padding-top: 2rem;
+}
 /* Footer */
 
 .site-footer{
-  background-color: var(--primario);
+  background-color: var(--calipso);
   margin-top: 2rem;
 }
 
-@media(min-width: 768px) {
-  .Footer-container{
-    display: flex;
-    align-items: center;
-  }
-}
-
-.Footer-container-item{
-  padding: 2rem 0;
-}
-
-@media(min-width: 768px) {
-  .Footer-container-item.imagen{
-    width: 10%;
-  }
-  .Footer-container-item.patreon{
-    width: 65%;
-  }
-
-  .Footer-container-item.gnl{
-    width: 25%;
-  }
-}
-
-.Footer-container-item img.logo-footer{
-  display: block;
-  width: 30%;
-  margin: auto;
-}
-
-@media(min-width: 768px) {
-  .Footer-container-item img.logo-footer{
-    width: 100%;
-  }
-}
-
-.Footer-container-item img.logo-gnl{
-  display: block;
-  width: 90%;
-  margin: auto;
-}
-
-.Footer-container-item p.patrocina{
-  text-align: center;
+.contenido-footer p{
   color: var(--blanco);
-  margin: 0;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
 }
 
 @media(min-width: 768px) {
-  .Footer-container-item p.patrocina{
-    text-align: end;
-    margin-right: .5rem;
-    font-size: 1.8rem;
+  .contenido-footer p{
+    padding-top: 3rem;
+    font-size: 2rem;
   }
+}
+
+@media(min-width: 1024px) {
+  .contenido-footer p{
+    font-size: 2.3rem;
+  }
+}
+
+
+.Card-copy, .Box-creditos{
+  text-align: center;
+}
+
+@media(min-width: 768px) {
+  .Card-copy{
+    display: flex;
+    justify-content: center;
+  }
+
+  .Card-copy p{
+    margin-right: .5rem;
+  }
+}
+
+.Small-text{
+  color: var(--blanco);
+  margin-bottom: 0;
+}
+
+.Box-creditos p{
+  font-size: 1.3rem;
+}
+
+.Link-text-creditos{
+  color: var(--amarillo);
+}
+
+.Link-text-creditos:hover{
+  color:  #b88d0e;
+}
+
+/* Login y Registro*/
+
+.um.um-login, .um.um-register{
+  border: 1px solid var(--amarillo);
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+input#um-submit-btn.um-button, input.um-button{
+  /* border: 2px solid red !important; */
+  background: var(--degradado) !important ;
+  transform: all .3s;
+}
+
+input#um-submit-btn.um-button:hover, input.um-button:hover{
+  /* border: 2px solid red !important; */
+  background: var(--calipso-claro) !important ;
+}
+
+.um-field-label-icon > i{
+  color: #009b96 !important;
+}
+
+.um-field-checkbox-state > i{
+  color: #009b96 !important;
+}
+
+i.um-icon-help-circled{
+  color: #009b96 !important;
+}
+
+i.um-icon-help-circled:hover{
+  color: var(--calipso-claro) !important;
+}
+
+/* Formulario Perfil */
+
+/* .um-profile-meta{
+  border: 2px solid red;
+} */
+
+.um-profile-meta .um-main-meta .um-name > a{
+  color: var(--amarillo) !important;
+}
+
+[class^="um-faicon-"]:before, [class*=" um-faicon-"]:before{
+  /* background-color: red; */
+  color: #009b96;
+}
+
+/* .um-dropdown-b{
+  border: 1px solid var(--amarillo);
+} */
+
+.um-dropdown-b > ul> li > a{
+  color: var(--gris) !important;
+}
+
+.um-dropdown-b > ul> li > a:hover{
+  color: #009b96 !important;
+}
+
+.um-profile-nav{
+  background: var(--amarillo) !important;
+}
+
+.um-profile-nav-item.active a{
+  background: var(--gris) !important;
+}
+
+.um-account-name a{
+  color: var(--amarillo) !important;
+}
+
+.um-account-profile-link > a.um-link{
+  color: var(--calipso) !important;
+}
+
+.um-account-profile-link > a.um-link:hover{
+  color: var(--calipso-claro) !important;
 }
