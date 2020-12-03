@@ -1,14 +1,27 @@
   <footer class="site-footer">
-    <div class="contenedor">
-      <div class="contenido-footer">
-        <p>Únete a nuestra red para innovar, desde el sector minero energético</p>
+    <div class="Footer contenedor">
+      <div class="Footer-item">
+        <div class="footer-logo">
+          <img src="<?php echo get_template_directory_uri() . '/img/snmp-logo.png'; ?>" alt="Logo SNMP">
+        </div>
       </div>
-      <div class="Card-copy">
-        <p class="Small-text">Copyright &copy; <?php echo date('Y');?> Minergy Connect.</p>
-        <p class="Small-text">Todos los derechos reservados.</p>
+      <div class="Footer-item">
+        <div class="footer-contacto">
+          <h4>AYUDA <span>+</span>INFO</h4>
+          <div class="icono-mail">
+            <a href="mailto:contacto@minergyconnect.pe"><i class="fas fa-envelope mail"></i></a>
+          </div>
+        </div>
       </div>
-      <div class="Box-creditos">
-        <p class="Small-text">Desarrollado por<a class="Link-text-creditos" href="https://esferadigital.cl" target="_blank"> esferadigital.cl</a></p>
+      <div class="Footer-item">
+        <div class="footer-sociales">
+          <h4>SÍGUENOS</h4>
+          <div class="footer-sociales-iconos">
+            <a class="link-twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.spotify.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>

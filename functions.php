@@ -12,7 +12,7 @@
 
 //Establecer el ancho máximo permitido para cualquier contenido en el tema, como por ejemplo, embeds e imágenes.
 if(!isset($content_width)){
-  $content_width = 800;
+  $content_width = 1600;
 }
 
 //Establecer variables globales y asignar un valor a esas variables
@@ -43,17 +43,17 @@ if(!function_exists('minergy_scripts')):
     wp_enqueue_style('iconos', $font_awesome, array(), '5.7.2', 'all' );
     wp_enqueue_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '8.0.1');
 
-    wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik+Mono+One&display=swap', array(), '1.0.0');
+    wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css2?family=Lato&display=swap', array(), '1.0.0');
 
     wp_enqueue_style('slicknavCSS', get_template_directory_uri() . '/css/slicknav.min.css', array(), '1.0.10');
-    wp_enqueue_style('style', $style, array('normalize', 'googleFonts'), '1.1.0');
+    wp_enqueue_style('style', $style, array('normalize', 'googleFonts'), fileatime(get_template_directory() . '/style.css'), 'all');
 
     // Registramos los archivos js
 
     // wp_register_script('Jquery', $Jquery, array(), '3.4.1', true);
     wp_enqueue_script('slicknavJS', get_template_directory_uri() . '/js/jquery.slicknav.js', array('jquery'), '1.0.10', true);
 
-    wp_enqueue_script('globaljs', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'slicknavJS'), '1.0.0', true);
+    wp_enqueue_script('globaljs', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'slicknavJS'), fileatime(get_template_directory() . '/js/scripts.js'), true);
 
   }
 endif;
@@ -123,6 +123,10 @@ if(!function_exists('minergy_setup')):
     // soporte a imagen destacada
     add_theme_support('post-thumbnails');
 
+    // Agregamos imagenes de tamaño personalizado
+    add_image_size('blog', 1600, 400, true);
+    add_image_size('card', 500, 170, true);
+
     //soporte a etiquetas semánticas de html5
     add_theme_support('html5', array(
       'comment-list',
@@ -145,6 +149,35 @@ if(!function_exists('minergy_setup')):
       'chat'
     ));
 
+    // Soporte a colores para editor gutenberg
+    add_theme_support('editor-color-palette', array(
+      array(
+        'name' => __('Calipso', 'minergy'),
+        'slug' => 'calipso',
+        'color' => '#009b96',
+      ),
+      array(
+        'name' => __('Calipso claro', 'minergy'),
+        'slug' => 'calipso-claro',
+        'color' => '#54aa9e',
+      ),
+      array(
+        'name' => __('Amarillo', 'minergy'),
+        'slug' => 'amarillo',
+        'color' => '#ebb000',
+      ),
+      array(
+        'name' => __('Gris', 'minergy'),
+        'slug' => 'gris',
+        'color' => '#605f5f',
+      ),
+      array(
+        'name' => __('Blanco', 'minergy'),
+        'slug' => 'blanco',
+        'color' => '#ffffff',
+      ),
+    ));
+
     //Soporte a títulos dinámicos de páginas del sitio (para el SEO)
     add_theme_support('title-tag');
 
@@ -158,7 +191,10 @@ endif;
 add_action('after_setup_theme', 'minergy_setup');
 
 // Soportes adicionales
-require_once get_template_directory() . '/inc/custom-header.php';
-require_once get_template_directory() . '/inc/custom-excerpt.php';
-require_once get_template_directory() . '/inc/custom-description.php';
+require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-excerpt.php';
+require get_template_directory() . '/inc/custom-description.php';
+
+// Consultas reutilizables
+require get_template_directory() . '/inc/queries.php';
 
