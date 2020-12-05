@@ -52,8 +52,8 @@ if(!function_exists('minergy_scripts')):
 
     // wp_register_script('Jquery', $Jquery, array(), '3.4.1', true);
     wp_enqueue_script('slicknavJS', get_template_directory_uri() . '/js/jquery.slicknav.js', array('jquery'), '1.0.10', true);
-
-    wp_enqueue_script('globaljs', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'slicknavJS'), fileatime(get_template_directory() . '/js/scripts.js'), true);
+    wp_enqueue_script('particlesJS', 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js', array(), '2.0.0', true);
+    wp_enqueue_script('globaljs', get_template_directory_uri() . '/js/scripts.js', array('jquery', 'slicknavJS', 'particlesJS'), fileatime(get_template_directory() . '/js/scripts.js'), true);
 
   }
 endif;

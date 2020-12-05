@@ -32,6 +32,7 @@
   <!-- End Facebook Pixel Code -->
 </head>
 <body <?php body_class(''); ?>>
+  <div id="particles-js"></div>
   <header class="site-header">
     <div class="contenedor">
       <div class="barra-navegacion">
