@@ -2,7 +2,7 @@
   <main class="Main">
     <div class="Header-blog contenedor">
       <h3 class="titulo-blog">
-        Novedades:
+        Resultado:
       </h3>
       <div class="buscador">
         <?php echo do_shortcode( '[searchandfilter fields="search,post_date" types=",daterange" search_placeholder="Palabra clave" submit_label="Buscar"]' ); ?>

@@ -125,7 +125,7 @@ if(!function_exists('minergy_setup')):
 
     // Agregamos imagenes de tamaño personalizado
     add_image_size('blog', 1600, 400, true);
-    add_image_size('card', 500, 170, true);
+    add_image_size('card', 400, 400, true);
 
     //soporte a etiquetas semánticas de html5
     add_theme_support('html5', array(
